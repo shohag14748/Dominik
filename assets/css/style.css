@@ -1,0 +1,568 @@
+/*===========================
+     01.COMMON css 
+===========================*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700|Lato:300,400,700&display=swap");
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #6a6972;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+i,
+span,
+a {
+  display: inline-block;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #2e2e2e;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+h5 {
+  font-size: 22px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+ul,
+ol {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #6a6972;
+  margin: 0px;
+}
+
+.bg_cover {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 1700px) {
+  .container {
+    max-width: 1680px;
+  }
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 100px;
+}
+@media only screen and (max-width: 1700px) {
+  .section-title {
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .section-title {
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 1770px) {
+  .section-title h2 {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .section-title h2 {
+    font-size: 36px;
+  }
+}
+
+header.header-area {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: all 0.3s ease-out 0s;
+}
+header.header-area .navbar {
+  padding: 30px 0;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.3s ease-out 0s;
+}
+header.header-area .navbar .navbar-brand {
+  padding: 0;
+}
+header.header-area .navbar .navbar-brand img {
+  width: 150px;
+  transition: all 0.3s ease;
+}
+@media only screen and (max-width: 991px) {
+  header.header-area .navbar .navbar-brand img {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  header.header-area .navbar .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 9;
+    box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+    padding: 5px 12px;
+  }
+  header.header-area .navbar .navbar-collapse .navbar-nav .nav-item a {
+    color: #000;
+    display: block;
+  }
+  header.header-area .navbar .navbar-collapse .navbar-nav .nav-item a.active, header.header-area .navbar .navbar-collapse .navbar-nav .nav-item a:hover {
+    color: #3e5ecc;
+  }
+}
+@media only screen and (max-width: 768px) {
+  header.header-area .navbar .navbar-collapse {
+    padding: 5px 12px;
+  }
+  header.header-area .navbar .navbar-collapse .navbar-nav .nav-item a {
+    padding: 5px 0;
+    font-size: 16px;
+  }
+}
+header.header-area .navbar .navbar-nav .nav-item {
+  margin-right: 80px;
+  position: relative;
+}
+@media only screen and (max-width: 1770px) {
+  header.header-area .navbar .navbar-nav .nav-item {
+    margin-right: 60px;
+  }
+}
+header.header-area .navbar .navbar-nav .nav-item a {
+  font-size: 28px;
+  font-weight: 400;
+  color: #fff;
+  transition: all 0.3s ease-out 0s;
+  padding: 10px 0;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+header.header-area .navbar .navbar-nav .nav-item a:hover {
+  color: #59bef1;
+}
+@media only screen and (max-width: 1770px) {
+  header.header-area .navbar .navbar-nav .nav-item a {
+    font-size: 20px;
+  }
+}
+header.header-area .navbar button#lanDropdownMenuButton {
+  background-color: #dddddd;
+  border-color: #dddddd;
+  color: #000;
+  padding: 5px 25px;
+  border-radius: 15px;
+  font-size: 24px;
+}
+@media only screen and (max-width: 1770px) {
+  header.header-area .navbar button#lanDropdownMenuButton {
+    font-size: 20px;
+  }
+}
+header.header-area .navbar button#lanDropdownMenuButton i {
+  font-size: 18px;
+  margin-left: 5px;
+}
+header.header-area .navbar button#lanDropdownMenuButton::after {
+  display: none;
+}
+header.header-area .navbar .lanDropdownMenu {
+  font-size: 20px;
+  right: 0;
+  left: auto;
+  padding: 0;
+  border: 1px solid #fff;
+  overflow: hidden;
+  min-width: 106px;
+}
+header.header-area .navbar .lanDropdownMenu .dropdown-item:hover {
+  background-color: #3e5ecc;
+  color: #fff;
+}
+header.header-area .navbar-toggler {
+  padding: 0;
+}
+header.header-area .navbar-toggler .toggler-icon {
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  margin: 5px 0;
+  position: relative;
+  transition: all 0.3s ease-out 0s;
+}
+header.header-area .navbar-toggler.active .toggler-icon:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 7px;
+}
+header.header-area .navbar-toggler.active .toggler-icon:nth-of-type(2) {
+  opacity: 0;
+}
+header.header-area .navbar-toggler.active .toggler-icon:nth-of-type(3) {
+  transform: rotate(135deg);
+  top: -7px;
+}
+header.header-area.sticky {
+  position: fixed !important;
+  z-index: 99;
+  background-color: #fff;
+  box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-out 0s;
+  top: 0;
+}
+header.header-area.sticky .navbar {
+  padding: 10px 0;
+}
+header.header-area.sticky .navbar .navbar-brand img {
+  width: 100px;
+}
+header.header-area.sticky .navbar .navbar-toggler .toggler-icon {
+  background-color: #000;
+}
+header.header-area.sticky .navbar .navbar-nav .nav-item.active a {
+  color: #3e5ecc;
+}
+header.header-area.sticky .navbar .navbar-nav .nav-item a {
+  color: #000;
+}
+header.header-area.sticky .navbar .navbar-nav .nav-item a:hover {
+  color: #3e5ecc;
+}
+
+#hero {
+  position: relative;
+  background-image: url(../images/banner-bg.svg);
+  background-position: center bottom 20px;
+  padding-bottom: 100px;
+  padding-top: 90px;
+}
+@media only screen and (max-width: 1770px) {
+  #hero {
+    padding-top: 90px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #hero {
+    padding-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #hero {
+    padding-top: 120px;
+  }
+}
+#hero .hero-container {
+  position: relative;
+  z-index: 2;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-container {
+    padding-top: 50px;
+  }
+}
+#hero .hero-container img {
+  padding-left: 10%;
+  display: block;
+}
+@media only screen and (max-width: 1770px) {
+  #hero .hero-container img {
+    padding-left: 5%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-container img {
+    padding-left: 0%;
+  }
+}
+#hero .hero-title {
+  font-size: 90px;
+  color: #fff;
+  position: relative;
+  margin-bottom: 80px;
+}
+@media only screen and (max-width: 1770px) {
+  #hero .hero-title {
+    font-size: 70px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  #hero .hero-title {
+    font-size: 56px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #hero .hero-title {
+    font-size: 45px;
+    margin-bottom: 70px;
+  }
+}
+#hero .hero-title::after {
+  content: "";
+  width: 120px;
+  height: 20px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+}
+@media only screen and (max-width: 991px) {
+  #hero .hero-title::after {
+    width: 90px;
+    height: 15px;
+    bottom: -25px;
+  }
+}
+#hero .hero-sub-title {
+  font-size: 40px;
+  color: #fff;
+  font-weight: 500;
+  max-width: 600px;
+}
+@media only screen and (max-width: 1770px) {
+  #hero .hero-sub-title {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  #hero .hero-sub-title {
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #hero .hero-sub-title {
+    font-size: 20px;
+  }
+}
+#hero #particles-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#about {
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
+@media only screen and (max-width: 1770px) {
+  #about {
+    padding-top: 30px;
+    padding-bottom: 100px;
+  }
+}
+#about .about-image {
+  padding-right: 7%;
+  margin-top: 50px;
+}
+#about .about-contents {
+  padding-left: 10%;
+}
+@media only screen and (max-width: 1770px) {
+  #about .about-contents {
+    padding-left: 0;
+  }
+}
+#about .about-contents p {
+  font-size: 28px;
+  line-height: 50px;
+  color: #000;
+}
+@media only screen and (max-width: 1770px) {
+  #about .about-contents p {
+    font-size: 22px;
+    line-height: 40px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  #about .about-contents p {
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #about .about-contents p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #about .row {
+    flex-direction: column-reverse;
+  }
+  #about .row .about-image {
+    padding-right: 0;
+  }
+  #about .row p {
+    text-align: center !important;
+  }
+}
+
+#howWeWork #scene {
+  position: relative;
+  padding: 100px 0;
+  background-color: #ebebeb;
+  overflow: hidden;
+}
+@media only screen and (max-width: 768px) {
+  #howWeWork #scene {
+    padding: 60px 0;
+  }
+}
+#howWeWork #scene .container {
+  position: relative;
+  z-index: 2;
+}
+#howWeWork #scene .row {
+  margin-bottom: 70px;
+}
+#howWeWork #scene .row:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 768px) {
+  #howWeWork #scene .row {
+    margin-bottom: 50px;
+  }
+  #howWeWork #scene .row.step2 {
+    flex-direction: column-reverse;
+  }
+}
+#howWeWork #scene .howWeWork-image {
+  width: 180px;
+  height: 180px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: auto;
+  display: block;
+  padding: 40px;
+}
+#howWeWork #scene .howWeWork-image img {
+  width: 100%;
+}
+#howWeWork #scene .howWeWork-text h4 {
+  color: #3e5ecc;
+  margin-bottom: 40px;
+}
+@media only screen and (max-width: 768px) {
+  #howWeWork #scene .howWeWork-text h4 {
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+#howWeWork #scene .howWeWork-text p {
+  font-size: 28px;
+  line-height: 45px;
+  color: #000;
+}
+@media only screen and (max-width: 1770px) {
+  #howWeWork #scene .howWeWork-text p {
+    font-size: 22px;
+    line-height: 40px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  #howWeWork #scene .howWeWork-text p {
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #howWeWork #scene .howWeWork-text p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #howWeWork #scene .howWeWork-text p {
+    text-align: center;
+  }
+}
+#howWeWork #scene .bg-paralax {
+  position: absolute;
+  width: 105%;
+  height: 105%;
+  margin-left: -2.5%;
+  margin-top: -2.5%;
+  background-image: url(../images/How-we-work-background.png);
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+  z-index: 1;
+}
+@media only screen and (max-width: 768px) {
+  #howWeWork #scene .bg-paralax {
+    height: 140%;
+    margin-top: -20%;
+  }
+}
