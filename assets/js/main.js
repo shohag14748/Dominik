@@ -72,6 +72,46 @@ $(function () {
     );
   });
 
+  // =====  carousel
+  var swiper = new Swiper(".work-slider", {
+    slidesPerView: "auto",
+    spaceBetween: 70,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  var swiper = document.getElementsByClassName("brand-slider");
+  var nx = document.getElementsByClassName("bn");
+  var pr = document.getElementsByClassName("bp");
+  new Swiper(swiper, {
+    // slidesPerView: "auto",
+    slidesPerView: 5,
+    navigation: {
+      nextEl: nx,
+      prevEl: pr,
+    },
+  });
+
+  // var x = document.getElementsByClassName("brands-slider");
+
+  // for (var i = 0; i < x.length; i++) {
+  //   var el = x[i];
+
+  //   var swiper = el.getElementsByClassName("swiper-container")[0];
+  //   var nx = el.getElementsByClassName("swiper-button-next")[0];
+  //   var pr = el.getElementsByClassName("swiper-button-next")[0];
+
+  //   new Swiper(swiper, {
+  //     slidesPerView: 5,
+  //     // spaceBetween: 10,
+  //     navigation: {
+  //       nextEl: nx,
+  //       prevEl: pr,
+  //     },
+  //   });
+  // }
   // =====  Parallax
   var scene = document.getElementById("scene");
   var parallaxInstance = new Parallax(scene);
