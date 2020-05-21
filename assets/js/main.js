@@ -75,10 +75,24 @@ $(function () {
   // =====  carousel
   var swiper = new Swiper(".work-slider", {
     slidesPerView: "auto",
-    spaceBetween: 70,
+    spaceBetween: 30,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      578: {
+        slidesPerView: "auto",
+      },
+      1199: {
+        spaceBetween: 30,
+      },
+      1700: {
+        spaceBetween: 70,
+      },
     },
   });
 
@@ -91,6 +105,17 @@ $(function () {
     navigation: {
       nextEl: nx,
       prevEl: pr,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      991: {
+        slidesPerView: 5,
+      },
     },
   });
 
