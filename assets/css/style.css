@@ -1460,7 +1460,7 @@ header.header-area.sticky .navbar .navbar-nav .nav-item a:hover {
   transition: 0.3s;
   color: #3e5ecc;
 }
-#contact .contact-from .input-group label span.active {
+#contact .contact-from .input-group label.active span {
   bottom: 45px;
   font-size: 16px;
   color: #59bef1;

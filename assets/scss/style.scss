@@ -1142,7 +1142,9 @@ header.header-area {
           pointer-events: none;
           transition: 0.3s;
           color: $primaryColor;
-          &.active {
+        }
+        &.active {
+          span {
             bottom: 45px;
             font-size: 16px;
             color: $secunderyColor;

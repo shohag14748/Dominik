@@ -6,17 +6,6 @@ $(function () {
   $(window).on("load", function (event) {
     $(".preloader").delay(2200).fadeOut(500);
   });
-//    window.onload = function(){
-//        document.querySelector(".preloader").style.display = "none";
-//    }
-    
-//    $('.js-preloader').preloadinator({
-//        animation: 'fadeOut',
-//        animationDuration: 400,
-////        minTime: 2000
-//
-//    });
-
 
   //===== Sticky
 
@@ -130,6 +119,60 @@ $(function () {
         slidesPerView: 5,
       },
     },
+  });
+
+  // ====== price change
+  var price = {
+    logo: [110, 210, 310],
+    webDesign: [120, 220, 320],
+    uiDesign: [130, 230, 330],
+    businessCard: [140, 240, 340],
+    advertisement: [150, 250, 350],
+    brochure: [160, 260, 360],
+    srickers: [170, 270, 370],
+    packaging: [180, 280, 380],
+    socialMedia: [190, 290, 390],
+  };
+  // ====== popup
+  $("#work .content").click(function (e) {
+    e.preventDefault();
+    var content = $(this).clone();
+    $("#workpopup .slide-content").empty().append(content);
+    $("#workpopup").fadeIn(500);
+  });
+  $("#workpopup .close-btn").click(function (e) {
+    e.preventDefault();
+    $("#workpopup").fadeOut(500);
+  });
+
+  $(".all-services button , .all-services a ").click(function (e) {
+    e.preventDefault();
+    var id = $(this).attr("id");
+    for (var i in price) {
+      if (i == id) {
+        var value = price[i];
+        $(".basic .price").text(value[0]);
+        $(".standard .price").text(value[1]);
+        $(".enterprise .price").text(value[2]);
+      }
+    }
+    $(".arrow-up , .arrow-down").fadeIn(500);
+    $(".work-slider .swiper-slide").hide();
+    $(".work-slider ." + id).show();
+  });
+  $(window).scroll(function () {
+    if ($(".arrow-down").attr("style") != null) {
+      $(".arrow-up , .arrow-down").fadeOut();
+    }
+  });
+  // ======= from
+  $(".contact-from input").on("blur", function () {
+    if ($(this).val() == "") {
+      $(this).siblings().removeClass("active");
+    }
+    if ($(this).val() != "") {
+      $(this).siblings().addClass("active");
+    }
   });
 
   // =====  Parallax
