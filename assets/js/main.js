@@ -3,19 +3,20 @@ $(function () {
 
   //===== Prealoder
 
-//  $(window).on("load", function (event) {
+  $(window).on("load", function (event) {
 //    $(".preloader").delay(2200).fadeOut(500);
-//  });
+      $(".preloader").addClass('ok');
+  });
 //    window.onload = function(){
 //        document.querySelector(".preloader").style.display = "none";
 //    }
     
-    $('.js-preloader').preloadinator({
-        animation: 'fadeOut',
-        animationDuration: 400,
-//        minTime: 2000
-
-    });
+//    $('.js-preloader').preloadinator({
+//        animation: 'fadeOut',
+//        animationDuration: 400,
+////        minTime: 2000
+//
+//    });
 
 
   //===== Sticky
