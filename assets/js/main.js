@@ -4,8 +4,7 @@ $(function () {
   //===== Prealoder
 
   $(window).on("load", function (event) {
-//    $(".preloader").delay(2200).fadeOut(500);
-      $(".preloader").addClass('ok');
+    $(".preloader").delay(2200).fadeOut(500);
   });
 //    window.onload = function(){
 //        document.querySelector(".preloader").style.display = "none";
