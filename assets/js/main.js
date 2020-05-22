@@ -4,7 +4,7 @@ $(function () {
   //===== Prealoder
 
   $(window).on("load", function (event) {
-    $(".preloader").delay(500).fadeOut(500);
+    $(".preloader").delay(2200).fadeOut(500);
   });
 
   //===== Sticky
@@ -73,27 +73,29 @@ $(function () {
   });
 
   // =====  carousel
-  var swiper = new Swiper(".work-slider", {
-    slidesPerView: "auto",
-    spaceBetween: 30,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
+  $(".work-slider").each(function () {
+    var swiper = new Swiper(this, {
+      slidesPerView: "auto",
+      spaceBetween: 30,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
-      578: {
-        slidesPerView: "auto",
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        578: {
+          slidesPerView: "auto",
+        },
+        1199: {
+          spaceBetween: 30,
+        },
+        1700: {
+          spaceBetween: 70,
+        },
       },
-      1199: {
-        spaceBetween: 30,
-      },
-      1700: {
-        spaceBetween: 70,
-      },
-    },
+    });
   });
 
   var swiper = document.getElementsByClassName("brand-slider");
@@ -119,24 +121,6 @@ $(function () {
     },
   });
 
-  // var x = document.getElementsByClassName("brands-slider");
-
-  // for (var i = 0; i < x.length; i++) {
-  //   var el = x[i];
-
-  //   var swiper = el.getElementsByClassName("swiper-container")[0];
-  //   var nx = el.getElementsByClassName("swiper-button-next")[0];
-  //   var pr = el.getElementsByClassName("swiper-button-next")[0];
-
-  //   new Swiper(swiper, {
-  //     slidesPerView: 5,
-  //     // spaceBetween: 10,
-  //     navigation: {
-  //       nextEl: nx,
-  //       prevEl: pr,
-  //     },
-  //   });
-  // }
   // =====  Parallax
   var scene = document.getElementById("scene");
   var parallaxInstance = new Parallax(scene);
