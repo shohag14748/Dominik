@@ -13,7 +13,7 @@ $(function () {
     $('.js-preloader').preloadinator({
         animation: 'fadeOut',
         animationDuration: 400,
-        minTime: 2000
+//        minTime: 2000
 
     });
 
