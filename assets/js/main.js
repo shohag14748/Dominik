@@ -7,9 +7,17 @@ $(function () {
 //    $(".preloader").delay(2200).fadeOut(500);
 //  });
 //    
-    window.onload = function(){
-        document.querySelector(".preloader").style.display = "none";
-    }
+//    window.onload = function(){
+//        document.querySelector(".preloader").style.display = "none";
+//    }
+    
+    $('.js-preloader').preloadinator({
+        animation: 'fadeOut',
+        animationDuration: 400,
+        minTime: 2000
+
+    });
+
 
   //===== Sticky
 
