@@ -14,9 +14,8 @@ if($_POST) {
 
    $name = trim(stripslashes($_POST['name']));
    $email = trim(stripslashes($_POST['email']));
-//   $subject = trim(stripslashes($_POST['subject']));
+   $subject = trim(stripslashes($_POST['subject']));
    $contact_message = trim(stripslashes($_POST['message']));
-   $subject = 'ok';
 
    
 	if ($subject == '') { $subject = "Contact Form Submission"; }
