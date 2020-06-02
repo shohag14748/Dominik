@@ -476,8 +476,11 @@ header.header-area.sticky .navbar .navbar-nav .nav-item a:hover {
 }
 @media only screen and (max-width: 768px) {
   #hero .hero-container img {
-    padding-left: 15%;
+    padding-left: 0;
+      width: 100%;
 	max-width: 400px;
+      display: block;
+      margin: auto;
 
   }
 }
@@ -1628,6 +1631,7 @@ header.header-area.sticky .navbar .navbar-nav .nav-item a:hover {
 @media only screen and (max-width: 768px) {
   #footer .container .footer-top .footer-links {
     padding-bottom: 30px;
+      padding-right: 5vw;
   }
 }
 #footer .container .footer-top .footer-title {
