@@ -1,7 +1,7 @@
 <?php
 
 // Replace this with your own email address
-$to = 'md.a.k.shohag@gmail.com';
+$to = 'info@refure.eu';
 
 
 if($_POST) {
