@@ -1595,5 +1595,5 @@ header.header-area.sticky .navbar .navbar-nav .nav-item a:hover {
 }
 
 div#zb-fa8ca {
-    display: none;
+    display: none !important;
 }
