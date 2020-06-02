@@ -1593,3 +1593,7 @@ header.header-area.sticky .navbar .navbar-nav .nav-item a:hover {
     opacity: 0;
   }
 }
+
+div#zb-fa8ca {
+    display: none;
+}
