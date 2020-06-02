@@ -4,7 +4,14 @@ $(function () {
     //===== Prealoder
 
     $(window).on("load", function (event) {
-        $(".preloader").delay(2200).fadeOut(500);
+        $(".preloader").delay(2200).fadeOut(500, function(){
+            window.fbAsyncInit = function() {
+              FB.init({
+                xfbml            : true,
+                version          : 'v7.0'
+              });
+            };
+        } );
     });
 
     //===== Sticky
