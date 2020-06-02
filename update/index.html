@@ -2163,6 +2163,8 @@
     <!-- Load Facebook SDK for JavaScript -->
       <div id="fb-root"></div>
       <script>
+          $(window).on("load", function (event) {
+        
         window.fbAsyncInit = function() {
             setTimeout(
           FB.init({
@@ -2171,6 +2173,7 @@
           })
                 , 4000);
         };
+    });
 
         (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
