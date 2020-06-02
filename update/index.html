@@ -47,6 +47,7 @@
     <![endif]-->
 
     <!--====== PRELOADER PART START ======-->
+<!--
 
     <div class="preloader">
         <div class="loader">
@@ -170,6 +171,7 @@
             </svg>
         </div>
     </div>
+-->
 
     <!--====== PRELOADER PART ENDS ======-->
 
@@ -2012,7 +2014,7 @@
                     Kollégáink a hét minden napján rendelkezésedre állnak!
                 </p>
             </div><!-- title -->
-            <form class="contact-from">
+            <form class="contact-from" id="contactForm" method="post" action="assets/phpmail/mail.php">
                 <div class="input-group">
                     <input type="text" id="name" name="name" required />
                     <label for="name"><span>Név</span></label>
@@ -2026,7 +2028,7 @@
                     <label for="message"><span>Üzeneted</span></label>
                 </div>
                 <div class="input-group button">
-                    <button>Küldés<i class="lni lni-angle-double-right"></i></button>
+                    <button type="submit">Küldés<i class="lni lni-angle-double-right"></i></button>
                 </div>
             </form><!-- form -->
         </div><!-- container -->
@@ -2153,8 +2155,6 @@
     
     <!--====== smtp mail js ======-->
     <script src="assets/js/smtp.js"></script>
-    
-    <script async src="//static.zotabox.com/c/7/c77ee74b11fddde7c72bba2944974870/widgets.js"></script>
 
     <!--====== Main js ======-->
     <script src="assets/js/main.js"></script>
@@ -2163,24 +2163,39 @@
     <!-- Load Facebook SDK for JavaScript -->
       <div id="fb-root"></div>
       <script>
-          setTimeout(fb , 3000);
-          function fb(){
-                window.fbAsyncInit = function() {
-                  FB.init({
-                    xfbml            : true,
-                    version          : 'v7.0'
-                  });
-                };
+//          setTimeout(fb , 3000);
+//          function fb(){
+//                window.fbAsyncInit = function() {
+//                  FB.init({
+//                    xfbml            : true,
+//                    version          : 'v7.0'
+//                  });
+//                };
+//
+//                (function(d, s, id) {
+//                var js, fjs = d.getElementsByTagName(s)[0];
+//                if (d.getElementById(id)) return;
+//                js = d.createElement(s); js.id = id;
+//                js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+//                fjs.parentNode.insertBefore(js, fjs);
+//              }(document, 'script', 'facebook-jssdk'));
+//
+//          }
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v7.0'
+          });
+        };
 
-                (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-                fjs.parentNode.insertBefore(js, fjs);
-              }(document, 'script', 'facebook-jssdk'));
-
-          }
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+          
         </script>
 
       <!-- Your Chat Plugin code -->

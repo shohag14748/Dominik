@@ -409,29 +409,29 @@ $(function () {
             retina_detect: !0,
         });
 
-    
-    $('.contact-from').on('submit',function(){
-        var fromvalue = 
-        "Name : " + $(".contact-from input['name']").val() + "<br>" +
-        "Email : " + $(".contact-from input['email']").val() + "<br>" +
-        "message : " + $(".contact-from input['message']").val();
-        sendEmail(fromvalue);
-    })
-
-    function sendEmail(fromvalue) {
-        Email.send({
-            Host: "smtp.mailtrap.io",
-            Username: "<Mail username>",
-            Password: "<Mail password>",
-            To: 'recipient@example.com',
-            From: "sender@example.com",
-            Subject: "Test email",
-            Body: "<html>" + fromvalue + "</html>"
-        }).then(
-            message => alert(message)
-        );
-    }
-
+//    
+//    $('#contactForm').on('submit',function(e){
+//        e.preventDefault();
+//        var fromvalue = 
+//        "Name : " + $(".contact-from input['name']").val() + "<br>" +
+//        "Email : " + $(".contact-from input['email']").val() + "<br>" +
+//        "message : " + $(".contact-from input['message']").val();
+//        sendEmail(fromvalue);
+//    })
+//
+//    function sendEmail(fromvalue) {
+//        Email.send({
+//            Host: "mail.refure.eu",
+//            Username: "info@refure.eu",
+//            Password: "t+6B,nNM1PDG",
+//            To: 'info@refure.eu',
+//            From: "support@refure.eu",
+//            Subject: "website email",
+//            Body: "<html>" + fromvalue + "</html>"
+//        }).then(
+//            message => alert(message)
+//        );
+//    }
 
 
 
