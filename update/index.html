@@ -2163,17 +2163,13 @@
     <!-- Load Facebook SDK for JavaScript -->
       <div id="fb-root"></div>
       <script>
-          $(window).on("load", function (event) {
-        
-        window.fbAsyncInit = function() {
-            setTimeout(
+        setTimeout(fbAsyncInit , 3000);
+        function fbAsyncInit() {
           FB.init({
             xfbml            : true,
             version          : 'v7.0'
-          })
-                , 4000);
+          });
         };
-    });
 
         (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
