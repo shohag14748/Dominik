@@ -1,0 +1,1313 @@
+@import "common";
+@import "variable";
+@import "mixin";
+
+/*===========================
+     02.PRELOADER css 
+===========================*/
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: table;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  z-index: 999999999;
+  .loader {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  svg {
+    max-width: 200px;
+    .logotext {
+      opacity: 0;
+      animation: logotext 1.5s linear forwards;
+      animation-delay: 1.5s;
+      @keyframes logotext {
+        0% {
+          opacity: 0;
+        }
+        40% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .rect {
+        fill: #fff;
+        width: 100%;
+        height: 280px;
+        animation: rect 1s ease-in forwards;
+        transform: translate(0px, 2px);
+        animation-delay: 1.6s;
+        @keyframes rect {
+          0% {
+            width: 100%;
+          }
+          100% {
+            width: 0%;
+          }
+        }
+      }
+      .rect2 {
+        fill: #fff;
+        width: 100%;
+        height: 280px;
+        animation: rect2 1s ease-in forwards;
+        transform: translate(0px, 444px);
+        animation-delay: 1.6s;
+        @keyframes rect2 {
+          0% {
+            width: 100%;
+          }
+          100% {
+            width: 0%;
+            transform: translate(900px, 444px);
+          }
+        }
+      }
+    }
+    .stroke {
+      stroke-dasharray: 800;
+      stroke-dashoffset: 50;
+      animation: dash 1.5s linear forwards;
+      stroke: transparent;
+      stroke-width: 2;
+      fill: transparent;
+      stroke: #3e5ecc;
+      &.e {
+        stroke-dasharray: 950;
+      }
+      @keyframes dash {
+        0% {
+          stroke-dashoffset: 800;
+        }
+        80% {
+          stroke-dashoffset: 0;
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+/*===========================
+     03.HEADER css 
+===========================*/
+header.header-area {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: all 0.3s ease-out 0s;
+  .navbar {
+    padding: 30px 0;
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.3s ease-out 0s;
+    .navbar-brand {
+      padding: 0;
+      img {
+        width: 150px;
+        transition: all 0.3s ease;
+        @include mq(991) {
+          width: 100px;
+        }
+      }
+    }
+    .navbar-collapse {
+      @include mq(991) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 9;
+        box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+        padding: 5px 12px;
+        .navbar-nav .nav-item a {
+          color: #000;
+          display: block;
+          &.active,
+          &:hover {
+            color: $primaryColor;
+          }
+        }
+      }
+      @include mq(768) {
+        padding: 5px 12px;
+        .navbar-nav .nav-item a {
+          padding: 5px 0;
+          font-size: 16px;
+        }
+      }
+    }
+    .navbar-nav .nav-item {
+      margin-right: 80px;
+      position: relative;
+      @include mq(1770) {
+        margin-right: 60px;
+      }
+      a {
+        font-size: 28px;
+        font-weight: 400;
+        color: #fff;
+        transition: all 0.3s ease-out 0s;
+        padding: 10px 0;
+        position: relative;
+        font-family: "Poppins", sans-serif;
+        &:hover {
+          color: $secunderyColor;
+        }
+        @include mq(1770) {
+          font-size: 20px;
+        }
+      }
+    }
+    button#lanDropdownMenuButton {
+      background-color: #dddddd;
+      border-color: #dddddd;
+      color: #000;
+      padding: 5px 25px;
+      border-radius: 15px;
+      font-size: 24px;
+      @include mq(1770) {
+        font-size: 20px;
+      }
+      i {
+        font-size: 18px;
+        margin-left: 5px;
+      }
+      &::after {
+        display: none;
+      }
+    }
+    .lanDropdownMenu {
+      font-size: 20px;
+      right: 0;
+      left: auto;
+      padding: 0;
+      border: 1px solid #fff;
+      overflow: hidden;
+      min-width: 106px;
+      .dropdown-item:hover {
+        background-color: #3e5ecc;
+        color: #fff;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    padding: 0;
+    .toggler-icon {
+      width: 30px;
+      height: 2px;
+      background-color: #fff;
+      display: block;
+      margin: 5px 0;
+      position: relative;
+      transition: all 0.3s ease-out 0s;
+    }
+    &.active .toggler-icon:nth-of-type(1) {
+      transform: rotate(45deg);
+      top: 7px;
+    }
+    &.active .toggler-icon:nth-of-type(2) {
+      opacity: 0;
+    }
+    &.active .toggler-icon:nth-of-type(3) {
+      transform: rotate(135deg);
+      top: -7px;
+    }
+  }
+  &.sticky {
+    position: fixed !important;
+    z-index: 99;
+    background-color: #fff;
+    box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-out 0s;
+    top: 0;
+    .navbar {
+      padding: 10px 0;
+      .navbar-brand img {
+        width: 100px;
+      }
+      .navbar-toggler .toggler-icon {
+        background-color: #000;
+      }
+      .navbar-nav .nav-item {
+        &.active {
+          a {
+            color: #3e5ecc;
+          }
+        }
+        a {
+          color: #000;
+          &:hover {
+            color: #3e5ecc;
+          }
+        }
+      }
+    }
+  }
+}
+/*===========================
+     04.HERO css 
+===========================*/
+#hero {
+  position: relative;
+  background-image: url(../images/banner-bg.svg);
+  background-position: center bottom 20px;
+  padding-bottom: 100px;
+  padding-top: 90px;
+  @include mq(1770) {
+    padding-top: 90px;
+  }
+  @include mq(991) {
+    padding-bottom: 50px;
+  }
+  @include mq(768) {
+    padding-top: 120px;
+  }
+  .hero-container {
+    position: relative;
+    z-index: 2;
+    @include mq(768) {
+      padding-top: 50px;
+    }
+    img {
+      padding-left: 10%;
+      display: block;
+      @include mq(1770) {
+        padding-left: 5%;
+      }
+      @include mq(768) {
+        padding-left: 0%;
+      }
+    }
+  }
+  .hero-title {
+    font-size: 90px;
+    color: #fff;
+    position: relative;
+    margin-bottom: 80px;
+    @include mq(1770) {
+      font-size: 70px;
+    }
+    @include mq(1199) {
+      font-size: 56px;
+    }
+    @include mq(991) {
+      font-size: 45px;
+      margin-bottom: 70px;
+    }
+
+    &::after {
+      content: "";
+      width: 120px;
+      height: 20px;
+      background-color: #fff;
+      position: absolute;
+      left: 0;
+      bottom: -30px;
+      @include mq(991) {
+        width: 90px;
+        height: 15px;
+        bottom: -25px;
+      }
+    }
+  }
+  .hero-sub-title {
+    font-size: 40px;
+    font-weight: 600;
+    color: #d9d9d9;
+    font-weight: 500;
+    max-width: 600px;
+    @include mq(1770) {
+      font-size: 30px;
+    }
+    @include mq(1199) {
+      font-size: 26px;
+    }
+    @include mq(991) {
+      font-size: 20px;
+    }
+  }
+  #particles-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+}
+/*===========================
+     05.ABOUT css 
+===========================*/
+#about {
+  padding-top: 50px;
+  padding-bottom: 150px;
+  @include mq(1770) {
+    padding-top: 30px;
+    padding-bottom: 100px;
+  }
+  @include mq(991) {
+    padding-bottom: 70px;
+  }
+  .about-image {
+    padding-right: 7%;
+    margin-top: 50px;
+  }
+  .about-contents {
+    padding-left: 10%;
+    @include mq(1770) {
+      padding-left: 0;
+    }
+    p {
+      font-size: 28px;
+      line-height: 50px;
+      color: #000;
+      @include mq(1770) {
+        font-size: 22px;
+        line-height: 40px;
+      }
+      @include mq(1199) {
+        font-size: 18px;
+        line-height: 32px;
+      }
+      @include mq(991) {
+        font-size: 16px;
+        line-height: 26px;
+      }
+    }
+  }
+  @include mq(768) {
+    .row {
+      flex-direction: column-reverse;
+      .about-image {
+        padding-right: 0;
+      }
+      p {
+        text-align: center !important;
+      }
+    }
+  }
+}
+/*===========================
+     06.HOW WE WORK css 
+===========================*/
+#howWeWork {
+  #scene {
+    position: relative;
+    padding: 100px 0;
+    background-color: #ebebeb;
+    overflow: hidden;
+    @include mq(991) {
+      padding: 60px 0 20px;
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+    .row {
+      margin-bottom: 70px;
+      @include mq(768) {
+        margin-bottom: 50px;
+        &.step2 {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+    .howWeWork-image {
+      width: 180px;
+      height: 180px;
+      background-color: #fff;
+      border-radius: 50%;
+      margin: auto;
+      display: block;
+      padding: 40px;
+      img {
+        width: 100%;
+      }
+    }
+    .howWeWork-text {
+      h4 {
+        color: $primaryColor;
+        margin-bottom: 40px;
+        @include mq(768) {
+          text-align: center;
+          margin-top: 30px;
+        }
+      }
+      p {
+        font-size: 28px;
+        line-height: 45px;
+        color: #000;
+        @include mq(1770) {
+          font-size: 22px;
+          line-height: 40px;
+        }
+        @include mq(1199) {
+          font-size: 18px;
+          line-height: 32px;
+        }
+        @include mq(991) {
+          font-size: 16px;
+          line-height: 26px;
+        }
+        @include mq(768) {
+          text-align: center;
+        }
+      }
+    }
+    .bg-paralax {
+      position: absolute;
+      width: 105%;
+      height: 105%;
+      margin-left: -2.5%;
+      margin-top: -2.5%;
+      background-image: url(../images/How-we-work-background.png);
+      top: 0;
+      left: 0;
+      opacity: 0.2;
+      z-index: 1;
+      @include mq(768) {
+        height: 140%;
+        margin-top: -20%;
+      }
+    }
+  }
+}
+/*===========================
+     07.WORK css 
+===========================*/
+#work {
+  padding: 160px 0;
+  @include mq(1770) {
+    padding: 120px 0;
+  }
+  @include mq(1199) {
+    padding: 100px 0;
+  }
+  @include mq(991) {
+    padding: 70px 0;
+  }
+  .section-title {
+    margin-bottom: 60px;
+  }
+  .slider {
+    padding-left: calc((100vw - 1700px) / 2);
+    @include mq(1700) {
+      padding-left: calc((100vw - 1200px) / 2);
+    }
+    @include mq(1199) {
+      padding-left: calc((100vw - 991px) / 2);
+    }
+    @include mq(991) {
+      padding-left: calc((100vw - 768px) / 2);
+    }
+    @include mq(768) {
+      padding-left: calc((100vw - 576px) / 2);
+    }
+  }
+  .work-slider {
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+    padding-top: 130px;
+    margin-top: -130px;
+    @include mq(991) {
+      padding-top: 70px;
+      margin-top: -90px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.45);
+      height: 80px;
+      width: 80px;
+      line-height: 30px;
+      text-align: center;
+      color: $blackColor;
+      position: absolute;
+      top: 30px;
+      transition: 0.3s;
+      @include hover;
+      @include mq(991) {
+        height: 50px;
+        width: 50px;
+      }
+      &::after {
+        font-size: 35px;
+        @include mq(991) {
+          font-size: 24px;
+        }
+      }
+      &[aria-disabled="true"] {
+        display: none;
+      }
+    }
+    .swiper-button-prev {
+      left: auto;
+      right: 200px;
+      @include mq(991) {
+        right: 135px;
+      }
+    }
+    .swiper-button-next {
+      right: 100px;
+      @include mq(991) {
+        right: 70px;
+      }
+    }
+  }
+
+  .swiper-slide {
+    padding: 20px 0px;
+    width: 25%;
+    display: none;
+    &.primary {
+      display: block;
+    }
+    @include mq(1700) {
+      width: 30%;
+    }
+    @include mq(1199) {
+      width: 40%;
+    }
+    @include mq(991) {
+      width: 50%;
+    }
+    @include mq(768) {
+      width: 70%;
+    }
+    @include mq(578) {
+      width: 100%;
+    }
+    .content {
+      background-color: #fff;
+      box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.33);
+      border-radius: 10px;
+      overflow: hidden;
+      display: block;
+      cursor: pointer;
+      .image {
+        img {
+          width: 100%;
+        }
+      }
+      .bottom {
+        display: flex;
+        padding: 25px 30px;
+        align-items: center;
+        @include mq(1700) {
+          padding: 20px 15px;
+        }
+        .left-img {
+          img {
+            border-radius: 50%;
+          }
+        }
+        .right-text {
+          margin-left: 25px;
+          @include mq(1700) {
+            margin-left: 15px;
+          }
+          h5 {
+            margin-bottom: 7px;
+            color: $blackColor;
+            @include mq(1700) {
+              font-size: 18px;
+            }
+          }
+          p {
+            font-size: 20px;
+            color: $blackColor;
+            @include mq(1700) {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #workpopup {
+    position: fixed;
+    z-index: 9999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    .wrapper {
+      border-radius: 10px;
+      overflow: hidden;
+      display: block;
+      background-color: $whiteColor;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 80vw;
+      max-height: 80vh;
+      max-width: 60vh;
+      &:hover {
+        .close-btn {
+          display: block;
+        }
+      }
+      @include mq(768) {
+        width: 90vw;
+      }
+      div.content {
+        display: block;
+        .image {
+          img {
+            width: 100%;
+          }
+        }
+        .bottom {
+          display: flex;
+          padding: 25px 30px;
+          align-items: center;
+          @include mq(768) {
+            padding: 20px 15px;
+          }
+          .left-img {
+            img {
+              border-radius: 50%;
+            }
+          }
+          .right-text {
+            margin-left: 25px;
+            @include mq(768) {
+              margin-left: 15px;
+            }
+            h5 {
+              margin-bottom: 7px;
+              color: $blackColor;
+              @include mq(1700) {
+                font-size: 20px;
+              }
+              @include mq(768) {
+                font-size: 18px;
+              }
+            }
+            p {
+              font-size: 20px;
+              color: $blackColor;
+              @include mq(1700) {
+                font-size: 18px;
+              }
+              @include mq(768) {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        display: none;
+        transition: 0.3s;
+        padding: 10px;
+        line-height: 0px;
+        border-radius: 5px;
+        background-color: #00000049;
+        color: $primaryColor;
+        &:hover {
+          color: $whiteColor;
+        }
+      }
+    }
+  }
+}
+/*===========================
+     08.SERVICES css 
+===========================*/
+#services {
+  background-image: url(../images/service-bg.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 100px 0 30px;
+  @include mq(991) {
+    padding: 70px 0 30px;
+  }
+  .arrow-up {
+    display: none;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    left: calc(50% - 25px);
+    background: $primaryColor;
+    color: $whiteColor;
+    top: 110px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 50px;
+    z-index: 99999;
+    transition: 0.3s;
+    &:hover {
+      background-color: $darkColor;
+    }
+  }
+  .arrow-down {
+    display: none;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    left: calc(50% - 25px);
+    background: $primaryColor;
+    color: $whiteColor;
+    bottom: 40px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 50px;
+    z-index: 99999;
+    transition: 0.3s;
+    &:hover {
+      background-color: $darkColor;
+    }
+  }
+  .section-title {
+    h2 {
+      color: $whiteColor;
+    }
+  }
+  .all-services {
+    display: flex;
+    flex-flow: wrap;
+    @include mq(991) {
+      justify-content: center;
+    }
+    .single-service {
+      width: calc(100% / 5);
+      margin-bottom: 80px;
+      text-align: center;
+      @include mq(1700) {
+        margin-bottom: 60px;
+      }
+      @include mq(991) {
+        width: calc(100% / 4);
+        margin-bottom: 40px;
+      }
+      @include mq(768) {
+        width: calc(100% / 3);
+        margin-bottom: 40px;
+      }
+      @include mq(576) {
+        width: calc(100% / 2);
+        margin-bottom: 40px;
+      }
+      button {
+        border-radius: 50%;
+        width: 230px;
+        height: 230px;
+        display: block;
+        margin: auto;
+        border: 0;
+        cursor: pointer;
+        font-size: 100px;
+        background-color: $whiteColor;
+        transition: 0.3s;
+        @include hover;
+        @include mq(1700) {
+          width: 150px;
+          height: 150px;
+          font-size: 65px;
+        }
+      }
+      p {
+        margin-top: 40px;
+        color: $whiteColor;
+        font-size: 28px;
+        @include mq(1700) {
+          font-size: 24px;
+        }
+        @include mq(991) {
+          font-size: 20px;
+          margin-top: 30px;
+        }
+      }
+      .view-all {
+        background-color: $whiteColor;
+        width: 230px;
+        height: 230px;
+        margin: auto;
+        border-radius: 50%;
+        font-size: 36px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $blackColor;
+        transition: 0.3s;
+        @include hover;
+        @include mq(1700) {
+          width: 150px;
+          height: 150px;
+          font-size: 26px;
+        }
+      }
+    }
+  }
+}
+/*===========================
+     09.PRICING css 
+===========================*/
+#pricing {
+  padding: 120px 0;
+  @include mq(1700) {
+    padding: 100px 0;
+    .section-title {
+      padding-bottom: 30px;
+    }
+  }
+  @include mq(991) {
+    padding: 70px 0;
+  }
+  .package-text {
+    text-align: center;
+    margin: 10px;
+    border: 3px solid $primaryColor;
+    padding: 50px;
+    .name {
+      font-weight: 600;
+      color: $blackColor;
+      margin-bottom: 40px;
+    }
+    .price {
+      color: $primaryColor;
+    }
+    p small {
+      font-size: 18px;
+      color: $blackColor;
+    }
+    .include {
+      padding-top: 50px;
+      margin-bottom: 40px;
+      li {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #848484;
+      }
+    }
+    .buynow a {
+      display: inline-block;
+      font-size: 28px;
+      font-weight: bold;
+      padding: 7px 80px;
+      border-radius: 40px;
+      color: $whiteColor;
+      background: linear-gradient(
+        90deg,
+        rgb(88, 185, 235) 0%,
+        rgb(41, 46, 125) 50%,
+        rgb(41, 46, 125) 100%
+      );
+      background-size: 200%;
+      transition: 0.3s;
+      &:hover {
+        background-position: right center;
+      }
+    }
+
+    @include mq(1700) {
+      padding: 30px;
+      margin: 5px;
+      .name {
+        margin-bottom: 30px;
+      }
+      .include {
+        padding-top: 30px;
+        li {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+      }
+      .buynow a {
+        padding: 7px 20px;
+        display: block;
+        max-width: 280px;
+        margin: auto;
+      }
+    }
+    @include mq(991) {
+      max-width: 450px;
+      margin: 0 auto 20px;
+    }
+  }
+  .active {
+    .package-text {
+      background: linear-gradient(
+        0deg,
+        rgb(88, 185, 235) 0%,
+        rgb(41, 46, 125) 100%
+      );
+      border: 0;
+      transform: scale(1.1);
+      @include mq(991) {
+        transform: scale(1);
+      }
+      .name {
+        color: $whiteColor;
+      }
+      .price {
+        color: $whiteColor;
+      }
+      p small {
+        color: $whiteColor;
+      }
+      .include {
+        li {
+          color: $whiteColor;
+        }
+      }
+      .buynow a {
+        background: $whiteColor;
+        color: $primaryColor;
+        @include hover;
+      }
+    }
+  }
+}
+/*===========================
+     10.CONTACT css 
+===========================*/
+#contact {
+  padding-bottom: 100px;
+  padding-top: 50px;
+  .section-title {
+    margin-bottom: 50px;
+    @include mq(1700) {
+      margin-bottom: 40px;
+    }
+  }
+  @include mq(991) {
+    padding-bottom: 70px;
+  }
+  p {
+    font-size: 18px;
+    columns: $blackColor;
+  }
+  .contact-from {
+    max-width: 650px;
+    margin: auto;
+    .input-group {
+      margin-bottom: 20px;
+      input {
+        width: 100%;
+        display: block;
+        padding: 25px 0px 15px;
+        border: 0px;
+        border-bottom: 4px solid $primaryColor;
+        &:focus ~ label::after {
+          width: 100%;
+        }
+        &:focus ~ label span {
+          bottom: 45px;
+          font-size: 16px;
+          color: $secunderyColor;
+        }
+      }
+      textarea {
+        width: 100%;
+        display: block;
+        padding: 25px 0px 15px;
+        border: 0px;
+        border-bottom: 4px solid $primaryColor;
+        &:focus ~ label::after {
+          width: 100%;
+        }
+        &:focus ~ label span {
+          bottom: 45px;
+          font-size: 16px;
+          color: $secunderyColor;
+        }
+      }
+      label {
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        margin: 0;
+        span {
+          display: block;
+          position: absolute;
+          bottom: 20px;
+          font-size: 18px;
+          pointer-events: none;
+          transition: 0.3s;
+          color: $primaryColor;
+        }
+        &.active {
+          span {
+            bottom: 45px;
+            font-size: 16px;
+            color: $secunderyColor;
+          }
+        }
+        &:after {
+          content: "";
+          width: 0%;
+          height: 0;
+          border-bottom: 4px solid $secunderyColor;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
+          transition: 0.3s;
+        }
+      }
+      &.button {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+      button {
+        display: inline-block;
+        font-size: 28px;
+        font-weight: bold;
+        padding: 7px 80px;
+        border-radius: 40px;
+        color: $whiteColor;
+        border: 0;
+        background: linear-gradient(
+          90deg,
+          rgb(88, 185, 235) 0%,
+          rgb(41, 46, 125) 50%,
+          rgb(41, 46, 125) 100%
+        );
+        background-size: 200%;
+        transition: 0.3s;
+        i {
+          font-size: 20px;
+          margin-left: 10px;
+        }
+        &:hover {
+          background-position: right center;
+        }
+      }
+    }
+  }
+}
+
+/*===========================
+     11.BRAND css 
+===========================*/
+#brands {
+  margin-bottom: 100px;
+  @include mq(991) {
+    margin-bottom: 70px;
+  }
+  .brand-slider-wrap {
+    position: relative;
+    .brand-slider {
+      background: $primaryColor;
+      padding: 50px 20px;
+      margin: 0 20px;
+      border-radius: 40px;
+      box-sizing: border-box;
+      .swiper-wrapper {
+        display: flex;
+        align-items: center;
+        .swiper-slide {
+          display: inline-block;
+          img {
+            max-width: 80%;
+            display: block;
+            margin: auto;
+          }
+        }
+      }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.45);
+      height: 60px;
+      width: 60px;
+      line-height: 30px;
+      text-align: center;
+      color: $blackColor;
+      position: absolute;
+      transition: 0.3s;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-top: 0;
+      @include hover;
+      @include mq(991) {
+        height: 50px;
+        width: 50px;
+      }
+      &::after {
+        font-size: 30px;
+        @include mq(991) {
+          font-size: 20px;
+        }
+      }
+      &[aria-disabled="true"] {
+        display: none;
+      }
+    }
+    .swiper-button-prev {
+      left: -10px;
+    }
+    .swiper-button-next {
+      right: -10px;
+    }
+  }
+}
+/*===========================
+     12.FOOTER css 
+===========================*/
+#footer {
+  background-color: $darkColor;
+  position: relative;
+  .footer-shapes {
+    line-height: 0;
+    .footer-shape1 {
+      width: 100%;
+      position: relative;
+      margin-top: -2px;
+    }
+    .footer-shape2 {
+      position: absolute;
+      left: 0;
+      top: 40%;
+      @include mq(1199) {
+        width: 6vw;
+        top: 30%;
+      }
+    }
+    .footer-shape3 {
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+      width: 295px;
+      @include mq(1700) {
+        width: 260px;
+      }
+      @include mq(1199) {
+        width: 20vw;
+      }
+      @include mq(768) {
+        width: 35vw;
+      }
+    }
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+    .footer-top {
+      padding-left: 5%;
+      display: flex;
+      @include mq(768) {
+        flex-wrap: wrap;
+      }
+      .footer-links {
+        padding-right: 180px;
+        padding-bottom: 80px;
+        @include mq(1700) {
+          padding-right: 140px;
+        }
+        @include mq(1199) {
+          padding-right: 100px;
+          padding-bottom: 50px;
+        }
+        @include mq(768) {
+          padding-bottom: 30px;
+        }
+      }
+      .footer-title {
+        color: $whiteColor;
+        margin-bottom: 30px;
+        font-weight: 600;
+        @include mq(1700) {
+          font-size: 22px;
+          margin-bottom: 20px;
+        }
+      }
+      .footer-links {
+        a {
+          font-size: 22px;
+          margin-bottom: 20px;
+          color: $whiteColor;
+          @include mq(1700) {
+            font-size: 20px;
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+    .footer-bottom {
+      border-top: 1px solid $whiteColor;
+      padding: 20px 30px 80px;
+      display: flex;
+      justify-content: space-between;
+      @include mq(768) {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 40px;
+      }
+      .copyright {
+        font-size: 22px;
+        color: $whiteColor;
+        @include mq(1700) {
+          font-size: 20px;
+        }
+        @include mq(768) {
+          margin-bottom: 10px;
+        }
+      }
+      ul {
+        display: flex;
+        @include mq(768) {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        li {
+          font-size: 22px;
+          color: $whiteColor;
+          margin-right: 50px;
+          @include mq(1700) {
+            font-size: 20px;
+          }
+          @include mq(768) {
+            margin: 0 10px;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          a {
+            color: $whiteColor;
+          }
+        }
+      }
+    }
+  }
+  #particles-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+}
